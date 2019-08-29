@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fragment_training</string>
+
+
+    <string name="main_question">Tell me, how do you feel?</string>
+    <string name="snackbar_base">Thank you for telling me :-)</string>
+
+</resources>
