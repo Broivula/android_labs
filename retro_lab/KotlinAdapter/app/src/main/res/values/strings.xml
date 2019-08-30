@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinAdapter</string>
+    <string name="search_hits">Hits: </string>
+</resources>
