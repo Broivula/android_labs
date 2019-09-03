@@ -39,13 +39,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        camera_image.rotation = 0F
         val bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath)
         val exifInterface = ExifInterface(mCurrentPhotoPath)
         val orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)
         camera_image.setImageBitmap(bitmap as Bitmap?)
+        println("KIKKEL " + orientation)
         when(orientation){
             ExifInterface.ORIENTATION_ROTATE_270 ->   {camera_image.rotation = 270F; println("vertical yes?")}
             ExifInterface.ORIENTATION_ROTATE_90 -> {camera_image.rotation = 90F; println("horizontal no?")}
+            ExifInterface.ORIENTATION_ROTATE_180 -> {camera_image.rotation = 180F; println("horizontal no?")}
         }
 
     }
