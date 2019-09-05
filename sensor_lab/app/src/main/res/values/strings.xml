@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">sensor_lab</string>
+    <string name="hr_title">Your hear rate:</string>
+    <string name="acc_3">Good, keep your finger steady!</string>
+    <string name="acc_0">Hey! Put your finger back on the sensor! Properly this time.</string>
+    <string name="acc_2">Your finger is not properly aligned, the result might not be most accurate</string>
+    <string name="acc_1">Stop wiggling around! Result will not be accurate if you keep doing this!</string>
+    <string name="acc_weird">default text</string>
+    <string name="initial_text">Place your finger on the sensor.</string>
+</resources>
