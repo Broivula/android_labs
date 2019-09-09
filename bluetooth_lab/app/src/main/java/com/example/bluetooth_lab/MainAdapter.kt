@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.le.ScanResult
 import android.graphics.Color
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ import java.util.logging.Handler
 class MainAdapter (val activity: MainActivity) : RecyclerView.Adapter<CustomViewHolder>(), BleWrapper.BleCallback {
 
 
-    private lateinit var mHandler: BleWrapper
+    lateinit var mHandler: BleWrapper
 
 
     override fun onDeviceReady(gatt: BluetoothGatt) {
@@ -32,7 +33,9 @@ class MainAdapter (val activity: MainActivity) : RecyclerView.Adapter<CustomView
 
     override fun onNotify(characteristic: BluetoothGattCharacteristic) {
        // println("hey there mate, message for you: ")
-        updateUI(characteristic.value[1].toInt())
+        val value = characteristic.value[1].toInt()
+        DataManager.addMeasurement(value)
+        updateUI(value)
 
     }
 

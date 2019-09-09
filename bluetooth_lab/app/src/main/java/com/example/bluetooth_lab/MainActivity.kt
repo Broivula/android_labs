@@ -8,10 +8,12 @@ import android.bluetooth.le.ScanSettings
 import android.bluetooth.le.BluetoothLeScanner;
 import android.content.Context
 import android.bluetooth.le.ScanResult
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.provider.ContactsContract
 import android.widget.Adapter
 import android.widget.ArrayAdapter
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         scan_button.text = "start scan"
+        heart_rate_text.setOnClickListener { view ->
+            val intent = Intent(this, GraphActivity::class.java)
+            startActivity(intent)
+        }
 
 
         scan_button.setOnClickListener { view ->
@@ -56,6 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         scan_button.text = "stop scan"
         println( LOG_MSG +" scan started.")
+        if(DataManager.heartRateMeasurements.size > 0){DataManager.heartRateMeasurements.toMutableList().clear()}
         mScanResults = LinkedHashMap()
         mScanCallback = BtleScanCallBack()
         mBluetootLeScanner = mBluetoothAdapter!!.bluetoothLeScanner
