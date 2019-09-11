@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sqlite_lab</string>
+    <string name="title_home">Full list</string>
+    <string name="title_dashboard">Add a person</string>
+    <string name="title_notifications">Add a team</string>
+    <string name="app_person">Please give me a name.</string>
+    <string name="add_button">Add</string>
+</resources>
