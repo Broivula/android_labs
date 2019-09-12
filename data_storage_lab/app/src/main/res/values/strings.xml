@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">data_storage_lab</string>
+    <string name="write_button">Save</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="write_fragment_button">Write to a file</string>
+    <string name="read_fragment_button">Read the file</string>
+</resources>
