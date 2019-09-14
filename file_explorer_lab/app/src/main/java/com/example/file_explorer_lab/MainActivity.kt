@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         //so first let's check the folder
         if(checkPermission())
-        getRootFiles()
+        getFiles(rootFolder)
         disableFAB()
         recycler_view.layoutManager = GridLayoutManager(this, 3)
 
@@ -34,10 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun getRootFiles(){
-        val dir = Environment.getExternalStorageDirectory()
-        recycler_view.adapter = MainAdapter(dir.listFiles(), this)
-    }
     fun getFiles(file: File){
         previousFolder = file
         if(file != rootFolder){
